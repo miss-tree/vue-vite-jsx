@@ -1,0 +1,26 @@
+{
+  "name": "vue-vite-jsx",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "cross-env NODE_ENV=production vite build",
+    "serve": "cross-env NODE_ENV=development vite"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "mockjs": "^1.1.0",
+    "normalize.css": "^8.0.1",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vitejs/plugin-vue-jsx": "^1.1.2",
+    "@vue/compiler-sfc": "^3.0.5",
+    "cross-env": "^7.0.3",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "vite": "^2.1.0",
+    "vite-plugin-mock": "^2.5.0"
+  }
+}
