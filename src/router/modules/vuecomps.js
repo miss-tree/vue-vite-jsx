@@ -1,10 +1,11 @@
 
 
-const vuecomps =
+const vuecomps =[
 {
-    path: '/D3graph',
-    name:"D3graph",
+    path: '/vueModules',
+    name:"vueModules",
     meta:{ title:"D3笔记", icon: 'chart'},
+    component:()=>import('@/views/vuecomps/index')
 }
-
+]
 export default vuecomps;

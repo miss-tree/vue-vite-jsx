@@ -1,4 +1,5 @@
-const abVite = {
+const abVite =[
+ {
     path:'/vite',
     name:'vite',
     component:()=>import('@/views/vite/index'),
@@ -8,5 +9,5 @@ const abVite = {
 
     ]
 }
-
+]
 export default abVite

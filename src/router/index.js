@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory,createWebHashHistory } from 'vue-router';
 
 /** require方法   所有模块一起加载
 const routerList = [] // 路由数组 - 存放所有路由
@@ -26,19 +26,31 @@ const importAll =import.meta.globEager('./modules/*.js')
 let routerModules = []
 for (const modules of Object.entries(importAll)) {
     // console.log('modules',modules);
-    routerModules.push(modules[1].default)
+    routerModules=routerModules.concat(modules[1].default)
 }
 // console.log('importAll',importAll,routerModules)
 
 const global = [
     {
         path: '/',
-        name: 'Home',
+        // name: 'Home',
+        redirect:'/homePage',
         component: import('@/App.vue'),
+    },
+    {
+        path: '/homePage',
+        name: 'homePage',
+        component: import('@/views/common/homePage'),
+        meta:{title:'首页'}
     },
 ];
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes:[...global,...routerModules],
 });
+
+router.beforeEach((to,from,next)=>{
+    document.title = to.meta.title
+    next()
+})
 export default router;

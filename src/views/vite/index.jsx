@@ -15,12 +15,11 @@ export default defineComponent({
                         <h3>vite应用</h3>
                     </div>
                     <div>
-
                         <h4>开始vite项目</h4>
                         <div>
-                            <a href="https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project" 
-                            target="_blank" rel="noopener noreferrer">中文官方文档</a>
                             <p>
+                                <a href="https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project" 
+                                target="_blank" rel="noopener noreferrer">中文官方文档</a>
                                 其中文档中有一句话很重要，“Vite 需要在支持 原生 ES 模块动态导入 的浏览器中使用”，
                                 使用的语法要用 importat ,不支持 require 模块导入，动态的多模块导入请参考路由下index.js。
                             </p>

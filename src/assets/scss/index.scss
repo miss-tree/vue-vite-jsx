@@ -1,8 +1,28 @@
 a{
     cursor: pointer;
+    font-weight: 550;
+    color: #3eaf7c;
+    text-decoration: none;
 }
-
-
+img{
+    width: 100%;
+    height: auto;
+}
+p{
+    line-height: 25px;
+    text-indent: 2em;
+    text-align: left;
+}
+h4,h5{
+    text-align: left;
+}
+li{
+    text-align: left;
+    line-height: 30px;
+}
+body{
+    background-color: #fcfcfc;
+}
 
 .banner{
     width: 100%;
@@ -10,21 +30,23 @@ a{
     line-height: 50px;
     color: #fff;
     font-size: 20px;
-    background: #3399ff;
+    background: #ad5f5f;
     box-shadow: 0 4px 3px #ccc;
 }
 
 
 .contentCenter{
     margin: auto;
+    margin-top: 5px;
     width: 1000px;
 }
-
-p{
-    text-indent: 2em;
-    text-align: left;
+.contentBody{
+    min-height: 400px;
 }
 
+.flex{
+    display: flex;
+}
 .code{
     color: #fff;
     text-align: left;
@@ -41,4 +63,9 @@ p{
 
 .yellowCode{
     color: #f89774;
+}
+
+.red{
+    color: red;
+    font-weight: 550;
 }

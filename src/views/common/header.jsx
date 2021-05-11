@@ -4,7 +4,11 @@ export default defineComponent({
     name:'header',
     setup(){
         return ()=>(
-            <div class="banner">头部</div>
+            <div class="banner">
+                <router-link to="/">
+                    头部
+                </router-link>
+            </div>
         )
     }
 })

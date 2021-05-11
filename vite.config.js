@@ -6,8 +6,14 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    // assetsDir: 'static',
+    // parallel: false,
+    // publicPath: './',
 	resolve:{
-		alias: {"@":path.resolve(__dirname,"src"),"comps":path.resolve(__dirname,"src/components")}
+		alias: {
+			"@":path.resolve(__dirname,"src"),
+			"comps":path.resolve(__dirname,"src/components")
+		}
 	},
 	plugins: [
 		vue(),
@@ -15,5 +21,9 @@ export default defineConfig({
 		viteMockServe({
 			supportTs:false
 		})
-	]
+	],
+	esbuild: {
+	  jsxFactory: 'h',
+	  jsxFragment: 'Fragment'
+	}
 })
