@@ -46,6 +46,11 @@ export default defineComponent({
                             递归与栈
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/BinaryTree">
+                            二叉树
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>

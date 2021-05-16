@@ -32,6 +32,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/stack/index'),
         name: 'stack',
         meta: { title: '递归与栈'},
+    },
+    {
+        path: '/BinaryTree',
+        component: () => import('@/views/Algorithm/BinaryTree/index'),
+        name: 'BinaryTree',
+        meta: { title: '二叉树'},
     }
 ]
 export default Algorithm;

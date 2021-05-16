@@ -1,8 +1,6 @@
 import { defineComponent } from "vue"
 import stack01 from '@/views/Algorithm/img/stack01.png'
 import stack02 from '@/views/Algorithm/img/stack02.png'
-import queue03 from '@/views/Algorithm/img/queue03.png'
-import queue04 from '@/views/Algorithm/img/queue04.png'
 
 export default defineComponent({
     name:'queue',
