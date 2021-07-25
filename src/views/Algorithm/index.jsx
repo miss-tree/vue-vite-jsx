@@ -51,6 +51,26 @@ export default defineComponent({
                             二叉树
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/Heap">
+                            堆与队列
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/UnionFind">
+                            并查集
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/QuickSort">
+                        快速排序
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/MergeSort">
+                        归并排序
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>

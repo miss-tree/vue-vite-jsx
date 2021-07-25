@@ -38,6 +38,30 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/BinaryTree/index'),
         name: 'BinaryTree',
         meta: { title: '二叉树'},
+    },
+    {
+        path: '/Heap',
+        component: () => import('@/views/Algorithm/Heap/index'),
+        name: 'Heap',
+        meta: { title: '堆与队列'},
+    },
+    {
+        path: '/UnionFind',
+        component: () => import('@/views/Algorithm/UnionFind/index'),
+        name: 'UnionFind',
+        meta: { title: '并查集'},
+    },
+    {
+        path: '/QuickSort',
+        component: () => import('@/views/Algorithm/QuickSort/index'),
+        name: 'QuickSort',
+        meta: { title: '快速排序'},
+    },
+    {
+        path: '/MergeSort',
+        component: () => import('@/views/Algorithm/MergeSort/index'),
+        name: 'MergeSort',
+        meta: { title: '归并排序'},
     }
 ]
 export default Algorithm;
