@@ -71,6 +71,11 @@ export default defineComponent({
                         归并排序
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/classical">
+                        传统排序
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>

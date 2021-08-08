@@ -62,6 +62,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/MergeSort/index'),
         name: 'MergeSort',
         meta: { title: '归并排序'},
+    },
+    {
+        path: '/classical',
+        component: () => import('@/views/Algorithm/classical/index'),
+        name: 'classical',
+        meta: { title: '传统排序'},
     }
 ]
 export default Algorithm;
