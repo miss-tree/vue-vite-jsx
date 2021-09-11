@@ -68,6 +68,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/classical/index'),
         name: 'classical',
         meta: { title: '传统排序'},
+    },
+    {
+        path: '/BinarySearch',
+        component: () => import('@/views/Algorithm/BinarySearch/index'),
+        name: 'BinarySearch',
+        meta: { title: '二分查找'},
     }
 ]
 export default Algorithm;

@@ -76,6 +76,11 @@ export default defineComponent({
                         传统排序
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/BinarySearch">
+                        二分查找
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>
