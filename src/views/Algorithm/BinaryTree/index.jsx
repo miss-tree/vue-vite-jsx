@@ -3,6 +3,7 @@ import Binary01 from '@/views/Algorithm/img/Binary01.png'
 import Binary02 from '@/views/Algorithm/img/Binary02.png'
 import Binary03 from '@/views/Algorithm/img/Binary03.png'
 import Binary04 from '@/views/Algorithm/img/Binary04.png'
+import Binary06 from '@/views/Algorithm/img/Binary06.png'
 
 export default defineComponent({
     name:'BinaryTree',
@@ -49,6 +50,7 @@ export default defineComponent({
                         二叉树遍历方式
                     </div> 
                     <img src={Binary04} alt="二叉树遍历方式"/>
+                    <img src={Binary06} alt="二叉树遍历方式"/>
                 </div>
                 <div>
                     <h5>二叉树应用场景</h5>

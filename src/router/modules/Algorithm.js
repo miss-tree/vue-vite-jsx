@@ -74,6 +74,18 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/BinarySearch/index'),
         name: 'BinarySearch',
         meta: { title: '二分查找'},
+    },
+    {
+        path: '/Hash',
+        component: () => import('@/views/Algorithm/Hash/index'),
+        name: 'Hash',
+        meta: { title: '哈希表布隆过滤器'},
+    }
+    {
+        path: '/DeepSearch',
+        component: () => import('@/views/Algorithm/DeepSearch/index'),
+        name: 'DeepSearch',
+        meta: { title: '深搜（DFS）与广搜（BFS）'},
     }
 ]
 export default Algorithm;

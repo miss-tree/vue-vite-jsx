@@ -81,6 +81,16 @@ export default defineComponent({
                         二分查找
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/Hash">
+                        哈希表布隆过滤器
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/DeepSearch">
+                        深搜（DFS）与广搜（BFS）
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>
