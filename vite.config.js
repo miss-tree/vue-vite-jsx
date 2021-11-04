@@ -10,7 +10,8 @@ import copy from 'rollup-plugin-copy' //引入插件
 export default defineConfig({
     // assetsDir: 'static',
     // parallel: false,
-    // publicPath: './',
+	// publicPath: './',
+	base:'./',
 	resolve:{
 		alias: {
 			"@":path.resolve(__dirname,"src"),
@@ -44,7 +45,7 @@ export default defineConfig({
         outDir:'public',   //指定输出路径
 		rollupOptions: {
 			// 请确保外部化那些你的库中不需要的依赖
-			external: ['vue', 'vue-router'],
+			// external: ['vue', 'vue-router'],
 			input: {
 				// 入口文件
 				main: resolve(__dirname, "index.html")

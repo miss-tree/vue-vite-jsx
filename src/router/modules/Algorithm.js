@@ -80,7 +80,7 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/Hash/index'),
         name: 'Hash',
         meta: { title: '哈希表布隆过滤器'},
-    }
+    },
     {
         path: '/DeepSearch',
         component: () => import('@/views/Algorithm/DeepSearch/index'),
