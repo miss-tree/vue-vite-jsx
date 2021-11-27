@@ -91,6 +91,11 @@ export default defineComponent({
                         深搜（DFS）与广搜（BFS）
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/Monotonic">
+                        单调队列和单调栈
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>

@@ -1,5 +1,3 @@
-
-
 const Algorithm =[
     {
         path: '/Algorithm',
@@ -86,6 +84,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/DeepSearch/index'),
         name: 'DeepSearch',
         meta: { title: '深搜（DFS）与广搜（BFS）'},
+    },
+    {
+        path: '/Monotonic',
+        component: () => import('@/views/Algorithm/Monotonic/index'),
+        name: 'Monotonic',
+        meta: { title: '单调队列和单调栈'},
     }
 ]
 export default Algorithm;
