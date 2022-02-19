@@ -96,6 +96,11 @@ export default defineComponent({
                         单调队列和单调栈
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/QueueStack">
+                        单调队列和单调栈 面试专题
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>

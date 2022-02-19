@@ -90,6 +90,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/Monotonic/index'),
         name: 'Monotonic',
         meta: { title: '单调队列和单调栈'},
+    },
+    {
+        path: '/QueueStack',
+        component: () => import('@/views/Algorithm/QueueStack/index'),
+        name: 'QueueStack',
+        meta: { title: '单调队列和单调栈 面试专题'},
     }
 ]
 export default Algorithm;
