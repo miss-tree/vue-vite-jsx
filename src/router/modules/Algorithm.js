@@ -96,6 +96,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/QueueStack/index'),
         name: 'QueueStack',
         meta: { title: '单调队列和单调栈 面试专题'},
+    },
+    {
+        path: '/BalanceTree',
+        component: () => import('@/views/Algorithm/BalanceTree/index'),
+        name: 'BalanceTree',
+        meta: { title: 'AVL树'},
     }
 ]
 export default Algorithm;
