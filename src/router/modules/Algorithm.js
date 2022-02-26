@@ -102,6 +102,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/BalanceTree/index'),
         name: 'BalanceTree',
         meta: { title: 'AVL树'},
+    },
+    {
+        path: '/RedBlackTree',
+        component: () => import('@/views/Algorithm/RedBlackTree/index'),
+        name: 'RedBlackTree',
+        meta: { title: 'AVL树'},
     }
 ]
 export default Algorithm;

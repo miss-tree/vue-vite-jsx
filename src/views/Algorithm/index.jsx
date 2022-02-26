@@ -106,6 +106,11 @@ export default defineComponent({
                         AVL树
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/RedBlackTree">
+                        红黑二叉树
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>
