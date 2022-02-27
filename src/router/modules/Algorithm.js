@@ -114,6 +114,12 @@ const Algorithm =[
         component: () => import('@/views/Algorithm/Recurrence/index'),
         name: 'Recurrence',
         meta: { title: '递推'},
+    },
+    {
+        path: '/Dynamic',
+        component: () => import('@/views/Algorithm/Dynamic/index'),
+        name: 'Dynamic',
+        meta: { title: '动态规划'},
     }
 ]
 export default Algorithm;

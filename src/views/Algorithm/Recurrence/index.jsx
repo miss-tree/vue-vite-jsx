@@ -2,7 +2,7 @@ import {defineComponent} from 'vue'
 // import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif' 
 
 export default defineComponent({
-    name:'BalanceTree',
+    name:'Recurrence',
     setup(){
         return ()=>(
             <div class='contentCenter'>

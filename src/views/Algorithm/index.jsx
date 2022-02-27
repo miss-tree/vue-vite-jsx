@@ -116,6 +116,11 @@ export default defineComponent({
                         递推
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/Dynamic">
+                        动态规划
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>
