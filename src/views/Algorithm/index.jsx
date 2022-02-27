@@ -111,6 +111,11 @@ export default defineComponent({
                         红黑二叉树
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/Recurrence">
+                        递推
+                        </router-link>
+                    </li>
                 </ul>
                 <div>
                     <img src={thm01} alt="算法学习"/>

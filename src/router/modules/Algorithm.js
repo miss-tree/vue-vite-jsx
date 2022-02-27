@@ -107,7 +107,13 @@ const Algorithm =[
         path: '/RedBlackTree',
         component: () => import('@/views/Algorithm/RedBlackTree/index'),
         name: 'RedBlackTree',
-        meta: { title: 'AVL树'},
+        meta: { title: '平衡二叉树'},
+    },
+    {
+        path: '/Recurrence',
+        component: () => import('@/views/Algorithm/Recurrence/index'),
+        name: 'Recurrence',
+        meta: { title: '递推'},
     }
 ]
 export default Algorithm;
