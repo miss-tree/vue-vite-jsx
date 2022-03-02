@@ -9,11 +9,13 @@ export default defineComponent({
     setup(){
         const { ctx } = getCurrentInstance()
         // ctx.$router.currentRoute.value 当前路由
-        console.log('router:',router,ctx.$router.currentRoute.value);
+        //! 后续新版本不支持这样写法 因为获取不到  ctx.$router 属性
+      console.log('router getCurrentInstance ctx :',router,ctx)//.$router.currentRoute.value);
         const route = useRoute()
         // 获取所有路由 route 为当前路由代理
-        const AlgorithmRoutes=router.options.routes
-        console.log('route:',route.path,toRaw(route))
+      const AlgorithmRoutes=router.options.routes // 获取路由列表
+      console.log('route:', route.path, toRaw(route))
+      // console.log('router:', router)
         return ()=>(
             <div class='contentCenter'>
                 <div>
