@@ -26,7 +26,8 @@ const importAll =import.meta.globEager('./modules/*.js')
 let routerModules = []
 for (const modules of Object.entries(importAll)) {
     // console.log('modules',modules);
-    routerModules=routerModules.concat(modules[1].default)
+  // routerModules = routerModules.concat(modules[1].default) // 少用 消耗性能
+   routerModules.push(...modules[1].default) 
 }
 // console.log('importAll',importAll,routerModules)
 

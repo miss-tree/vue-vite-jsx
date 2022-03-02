@@ -39,8 +39,21 @@ body{
     margin: auto;
     margin-top: 5px;
     width: 1000px;
+
+    a{
+      font-size: 16px;
+      margin: 0 4px;
+      letter-spacing: 2px;
+    }
+
     .line{
         text-align: left;
+    }
+    
+    div:first-child{
+      h3{
+        text-align: center;
+      }
     }
 }
 .contentBody{
