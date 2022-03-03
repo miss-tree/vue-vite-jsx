@@ -3,7 +3,7 @@ const Algorithm =[
         path: '/Algorithm',
         component: () => import('@/views/Algorithm/index'),
         name: 'Algorithm',
-        meta: { title: '算法提纲'},
+        meta: { title: '算法提纲',icon:'default'},
     },
     {
         path: '/linkList',
