@@ -13,6 +13,10 @@ if (process.env.NODE_ENV === 'development') {
       window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app
     }
     app.config.devtools = true
+    app.config.globalProperties.devtool = true
+    app.config.$devtool = 'true'
+  app.hello = "main.js"
+  console.log("main.js", app.config);
 }
 
 app.use(router);
