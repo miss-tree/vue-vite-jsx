@@ -1,10 +1,18 @@
 <template>
   <headerbanner/>
+  <backTop/>
   <router-view />
 </template>
 
-<script setup>
+<script>
   import headerbanner from '@/views/common/header.jsx'
+  import backTop from '@/components/BackTop.vue'
+  export default{
+    components:{
+      headerbanner,
+      backTop
+    }
+  }
   // import header from '@/views/vite/index.jsx'
   
   // fetch('/api/get').then(res=>res.json())
