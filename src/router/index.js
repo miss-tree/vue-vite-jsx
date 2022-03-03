@@ -40,12 +40,12 @@ const global = [
     path: '/',
     // name: 'Home',
     redirect: '/homePage',
-    component: import('@/App.vue'),
+    component:()=> import('@/App.vue'),
   },
   {
     path: '/homePage',
     name: 'homePage',
-    component: import('@/views/common/homePage'),
+    component: ()=>import('@/views/common/homePage'),
     meta: { title: '首页',icon:'home' }
   },
 ];
