@@ -1,52 +1,73 @@
-import {defineComponent} from 'vue'
+import { defineComponent, reactive } from 'vue'
+import '../css/Balance.scss'
 // import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif' 
 
 export default defineComponent({
-    name:'BalanceTree',
-    setup(){
-        return ()=>(
-            <div class='contentCenter'>
-                <div>
-                    <h3>AVL树</h3>
-                    <p>
-                    </p>
-                    {/* <img src={CardinalitySort} alt="归并排序"/> */}
-                </div>
-                <div>
-                    <h5>AVL树应用场景</h5>
-                    <ul>
-                        <li>
-                           。。。
-                        </li>
-                    </ul>
-                </div>
-                <div>
-					<h5>LeetCode题</h5>
-					<ul>
-						<li>leetcode #面试题 04.06. 后继者</li>
-						<li>LeetCode #450. 删除二叉搜索树中的节点</li>
-						<li>leetcode #1382. 将二叉搜索树变平衡</li>
-						<li>LeetCode #108. 将有序数组转换为二叉搜索树</li>
-						<li>LeetCode #98. 验证二叉搜索树</li>
-						<li>LeetCode #501. 二叉搜索树中的众数</li>
-						<li>LeetCode #面试题 17.12. BiNode</li>
-						<li>LeetCode #剑指 Offer 33. 二叉搜索树的后序遍历序列</li>
-						<li>LeetCode #1008. 前序遍历构造二叉搜索树</li>
-						<li>LeetCode #面试题 04.09. 二叉搜索树序列</li>
-					</ul>
-				</div>
-				<div>
-					<h5 id="path-sum">
-						<a href="https://leetcode-cn.com/problems/successor-lcci/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 面试题 04.06. 后继者</a>
-					</h5>
-					<p>
-						思路：... 
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+  name: 'BalanceTree',
+  setup () {
+    const state = reactive({
+      list:[
+        { name: 'leetcode #面试题 04.06. 后继者', id: 'pathsum' },
+        { name: 'LeetCode #450. 删除二叉搜索树中的节点', id:'delTreee'},
+        { name: 'leetcode #1382. 将二叉搜索树变平衡', id:'submissions'},
+        { name: 'LeetCode #108. 将有序数组转换为二叉搜索树', id:'search-tree'},
+        { name: 'LeetCode #98. 验证二叉搜索树', id:'validate-binary'},
+        { name: 'LeetCode #501. 二叉搜索树中的众数', id:'find-mode'},
+        { name: 'LeetCode #面试题 17.12. BiNode', id: 'binode-lcci' },
+        { name: 'LeetCode #剑指 Offer 33. 二叉搜索树的后序遍历序列', id: 'hou-xu' },
+        { name: 'LeetCode #1008. 前序遍历构造二叉搜索树', id: 'construct-binary' },
+        { name: 'LeetCode #面试题 04.09. 二叉搜索树序列', id: 'sequence' },
+      ]
+    })
+
+    const goAnchor = (selector)=>{
+      var anchor = document.querySelector('#'+selector) // 参数为要跳转到的元素id
+      console.log("anchor.offsetTop", anchor.offsetTop);
+      document.body.scrollTop = anchor.offsetTop; // chrome
+      document.documentElement.scrollTop = anchor.offsetTop; // firefox
+    }
+
+    return () => (
+      <div class='contentCenter'>
+        <div>
+          <h3>AVL树</h3>
+          <p>
+          </p>
+          {/* <img src={CardinalitySort} alt="归并排序"/> */}
+        </div>
+        <div>
+          <h5>AVL树应用场景</h5>
+          <ul>
+            <li>
+              。。。
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5>LeetCode题</h5>
+          <ul>
+            {/* <li>leetcode #面试题 04.06. 后继者</li>
+            <li>LeetCode #450. 删除二叉搜索树中的节点</li> */}
+            {state.list.map(d=>{
+              return (<li  className="listItem"
+                onClick={()=>{
+                goAnchor(d.id)
+              }}>{d.name}</li>)
+            })}
+          </ul>
+        </div>
+        <div>
+          <h5 id="pathsum">
+            <a href="https://leetcode-cn.com/problems/successor-lcci/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 面试题 04.06. 后继者</a>
+          </h5>
+          <p>
+            思路：...
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var inorderSuccessor = function(root, p) {
         if(!root) return null 
         let arr = [] 
@@ -62,23 +83,23 @@ export default defineComponent({
         return arr[ret] || null
     };              
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/delete-node-in-a-bst/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 450. 删除二叉搜索树中的节点</a>
-					</h5>
-					<p>
-						思路：。。。 
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='delTreee'>
+            <a href="https://leetcode-cn.com/problems/delete-node-in-a-bst/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 450. 删除二叉搜索树中的节点</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var MaxQueue = function() {
         this.queue1 = []; 
         this.queue2 = [];
@@ -116,24 +137,24 @@ export default defineComponent({
         return value;
     };
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/balance-a-binary-search-tree/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 1382. 将二叉搜索树变平衡</a>
-					</h5>
-					<p>
-						思路：...。
-						<br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='submissions'>
+            <a href="https://leetcode-cn.com/problems/balance-a-binary-search-tree/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 1382. 将二叉搜索树变平衡</a>
+          </h5>
+          <p>
+            思路：...。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var balanceBST = function(root) {
             const trees = [] 
             inorder(root) 
@@ -154,23 +175,23 @@ export default defineComponent({
             }
         };            
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 108. 将有序数组转换为二叉搜索树</a>
-					</h5>
-					<p>
-						思路：....
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id="search-tree">
+            <a href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 108. 将有序数组转换为二叉搜索树</a>
+          </h5>
+          <p>
+            思路：....
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     const buildTree = (nums, l, r) => { 
         if (l > r) return null; 
         // 构成不了区间，返回null 
@@ -189,23 +210,23 @@ export default defineComponent({
        return buildTree(nums, 0, nums.length - 1); // 递归的入口
    };                     
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/validate-binary-search-tree/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 98. 验证二叉搜索树</a>
-					</h5>
-					<p>
-						思路：。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='validate-binary'>
+            <a href="https://leetcode-cn.com/problems/validate-binary-search-tree/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 98. 验证二叉搜索树</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     const inorder = (root, lower, upper) => { 
         if (root === null) { return true; }
         if (root.val <= lower || root.val >= upper) { return false; }
@@ -216,23 +237,23 @@ export default defineComponent({
         return inorder(root, -Infinity, Infinity);
     };                      
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/"
-							target="_blank" rel="noopener noreferrer">leetcode 501. 二叉搜索树中的众数</a>
-					</h5>
-					<p>
-						思路：。。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id="find-mode">
+            <a href="https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/"
+              target="_blank" rel="noopener noreferrer">leetcode 501. 二叉搜索树中的众数</a>
+          </h5>
+          <p>
+            思路：。。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findMode = function(root) {
         //中序遍历，众数连续出现 
         //所用众数组成的数组 
@@ -259,23 +280,23 @@ export default defineComponent({
         return res;
     };                 
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/binode-lcci/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 面试题 17.12. BiNode</a>
-					</h5>
-					<p>
-						思路：....。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='binode-lcci'>
+            <a href="https://leetcode-cn.com/problems/binode-lcci/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 面试题 17.12. BiNode</a>
+          </h5>
+          <p>
+            思路：....。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var convertBiNode = function(root) {
         let head = null;
         //转换完之后的链表的头节点 
@@ -300,24 +321,24 @@ export default defineComponent({
         return head
     };    
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 剑指 Offer 33. 二叉搜索树的后序遍历序列</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='hou-xu'>
+            <a href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 剑指 Offer 33. 二叉搜索树的后序遍历序列</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var inorder = function(nums,l,r,p) { 
         if(l > r) return true; 
         let ind = l; 
@@ -334,24 +355,24 @@ export default defineComponent({
         return inorder(postorder,0,postorder.length - 1,pre);
     };                      
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 1008. 前序遍历构造二叉搜索树</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='construct-binary'>
+            <a href="https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 1008. 前序遍历构造二叉搜索树</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var buildTree = function(nums,l,r) { 
         if(l > r) return null; 
         let ind = l + 1; 
@@ -366,25 +387,25 @@ export default defineComponent({
         return buildTree(preorder,0,preorder.length-1); // 传入前序遍历的结果
     };                         
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/bst-sequences-lcci/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 面试题 04.09. 二叉搜索树序列 </a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+
+        <div>
+          <h5 id='sequence'>
+            <a href="https://leetcode-cn.com/problems/bst-sequences-lcci/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 面试题 04.09. 二叉搜索树序列 </a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var BSTSequences = function(root) {
         if(root === null) return [[]]; 
         let ret = []; 
@@ -414,13 +435,13 @@ export default defineComponent({
         return ret.map(x=>x[0]); 
     }                           
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                
-            </div>
-        )
-    }
+              </code>
+            </pre>
+          </div>
+        </div>
+
+
+      </div>
+    )
+  }
 })

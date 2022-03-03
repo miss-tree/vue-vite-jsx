@@ -1,57 +1,63 @@
-import {defineComponent} from 'vue'
+import { defineComponent, reactive } from 'vue';
 // import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif' 
+import location from "comps/location/index.vue";
+// import location from "../../../components/location/index"
 
 export default defineComponent({
-    name:'Heap',
-    setup(){
+  name: 'BinarySearch',
+  components: { location },
+  setup () {
+    const state = reactive({
+      list: [
+        { name: 'LeetCode #34. 在排序数组中查找元素的第一个和最后一个位置', id: 'sorted-array' },
+        { name: 'leetcode #1. 两数之和', id: 'two-sum' },
+        { name: 'leetcode #69. x 的平方根', id: 'sqrtx' },
+        { name: 'LeetCode #1658. 将 x 减到 0 的最小操作数', id: 'to-zero' },
+        { name: 'LeetCode #475. 供暖器', id: 'heaters' },
+        { name: 'LeetCode #300. 最长递增子序列', id: 'increasing-subsequence' },
+        { name: 'LeetCode #1011. 在 D 天内送达包裹的能力', id: 'ship-packages' },
+        { name: 'LeetCode #4. 寻找两个正序数组的中位数', id: 'sorted-arrays' },
+        { name: 'LeetCode #35. 搜索插入位置', id: 'search-insert' },
+        { name: 'LeetCode #81. 搜索旋转排序数组 II', id: 'rotated-sorted' },
+      ]
+    })
 
-        return ()=>(
-            <div class='contentCenter'>
-                <div>
-                    <h3>二分查找</h3>
-                    <p>
-                        二分查找算法是针对于一个有序算法快速查找的方法，最慢查找次数为32，因为整数型数字最高为32位。
-                        二分查找原理是将一个有序数据分成A(起点)、B(终点)、C(中点)三个点，待查找数据D在数据内，若D比C大
-                        则将A点移动到C+1位置，C移动到CB的终点(若中间位置为偶数，则是前一位，特殊情况是起点和终点相邻，
-                        那么起点和中点是同一个位置)
-                    </p>
-                    {/* <img src={CardinalitySort} alt="归并排序"/> */}
-                </div>
-                <div>
-                    <h5>二分查找应用场景</h5>
-                    <ul>
-                        <li>
-                            内存2G 对40G文件进行排序
-                        </li>
-                    </ul>
-                </div>
-                <div>
-					<h5>LeetCode题</h5>
-					<ul>
-						<li>leetcode #34. 在排序数组中查找元素的第一个和最后一个位置</li>
-						<li>LeetCode #1. 两数之和</li>
-						<li>leetcode #69. x 的平方根</li>
-						<li>LeetCode #1658. 将 x 减到 0 的最小操作数</li>
-						<li>LeetCode #475. 供暖器</li>
-						<li>LeetCode #300. 最长递增子序列</li>
-						<li>LeetCode #1011. 在 D 天内送达包裹的能力</li>
-						<li>LeetCode #4. 寻找两个正序数组的中位数</li>
-						<li>LeetCode #35. 搜索插入位置</li>
-						<li>LeetCode #81. 搜索旋转排序数组 II</li>
-					</ul>
-				</div>
-				<div>
-					<h5 id="path-sum">
-						<a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
-							target="_blank" rel="noopener noreferrer">leetcode 34. 在排序数组中查找元素的第一个和最后一个位置</a>
-					</h5>
-					<p>
-						思路：...(误区：只有两个连续的相同数字，而不是多个)
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+    return () => (
+      <div class='contentCenter'>
+        <div>
+          <h3>二分查找</h3>
+          <p>
+            二分查找算法是针对于一个有序算法快速查找的方法，最慢查找次数为32，因为整数型数字最高为32位。
+            二分查找原理是将一个有序数据分成A(起点)、B(终点)、C(中点)三个点，待查找数据D在数据内，若D比C大
+            则将A点移动到C+1位置，C移动到CB的终点(若中间位置为偶数，则是前一位，特殊情况是起点和终点相邻，
+            那么起点和中点是同一个位置)
+          </p>
+          {/* <img src={CardinalitySort} alt="归并排序"/> */}
+        </div>
+        <div>
+          <h5>二分查找应用场景</h5>
+          <ul>
+            <li>
+              内存2G 对40G文件进行排序
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5>LeetCode题</h5>
+          <location list={state.list}></location>
+        </div>
+        <div>
+          <h5 id="sorted-array">
+            <a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+              target="_blank" rel="noopener noreferrer">leetcode 34. 在排序数组中查找元素的第一个和最后一个位置</a>
+          </h5>
+          <p>
+            思路：...(误区：只有两个连续的相同数字，而不是多个)
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var binarySearch = function(nums,x) { 
         let head = 0,tail = nums.length-1,mid; 
         while(tail - head > 3){ 
@@ -76,25 +82,25 @@ export default defineComponent({
        return ret;    
    };                    
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/two-sum/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 1. 两数之和</a>
-					</h5>
-					<p>
-						思路：。。。(将两数之和看作一个终点C，然后将数据中小于C的数进行排序计算)
-                        1、思路我们遍历到数字 a 时，用 target 减去 a，就会得到 b，若 b 存在于哈希表中，我们就可以直接返回
-                        结果了。若 b 不存在，那么我们需要将 a 存入哈希表，好让后续遍历的数字使用。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='two-sum'>
+            <a href="https://leetcode-cn.com/problems/two-sum/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 1. 两数之和</a>
+          </h5>
+          <p>
+            思路：。。。(将两数之和看作一个终点C，然后将数据中小于C的数进行排序计算)
+            1、思路我们遍历到数字 a 时，用 target 减去 a，就会得到 b，若 b 存在于哈希表中，我们就可以直接返回
+            结果了。若 b 不存在，那么我们需要将 a 存入哈希表，好让后续遍历的数字使用。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var twoSum = function(nums, target) {
         let map = new Map(); 
         for(let i =0;i<nums.length;i++){ 
@@ -105,24 +111,24 @@ export default defineComponent({
         return [];
     };
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/sqrtx/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 69. x 的平方根</a>
-					</h5>
-					<p>
-						思路：...。
-						<br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='sqrtx'>
+            <a href="https://leetcode-cn.com/problems/sqrtx/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 69. x 的平方根</a>
+          </h5>
+          <p>
+            思路：...。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var mySqrt = function(x) {
             // 因为要找最后一个1的位置，假设head指向代表待查找的区间的第一个值， 
             // 求 y = 根号x;y最小是0，最大为x 
@@ -141,23 +147,23 @@ export default defineComponent({
         // 此时，head和tail就已经挨得很近很近了，所以head和tail之间的误差是可能仅有2的100次方分之一 
         // 可以认为两个是一个值，最后保留head的整数部分                  
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero/"
-							target="_blank" rel="noopener noreferrer">leetcode 1658. 将 x 减到 0 的最小操作数</a>
-					</h5>
-					<p>
-						思路：....
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='to-zero'>
+            <a href="https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero/"
+              target="_blank" rel="noopener noreferrer">leetcode 1658. 将 x 减到 0 的最小操作数</a>
+          </h5>
+          <p>
+            思路：....
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var minOperations = function(nums, x) { 
             let sumL = new Array(nums.length + 1); 
             let sumR = new Array(nums.length + 1); 
@@ -188,23 +194,23 @@ export default defineComponent({
             return -1;
         };                        
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/heaters/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 475. 供暖器</a>
-					</h5>
-					<p>
-						思路：。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='heaters'>
+            <a href="https://leetcode-cn.com/problems/heaters/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 475. 供暖器</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     // 思考，如何去查找最小路径 
     // 实际上就是去，查找第一个大于等于X的位置， 
     // 假设是房子X，供暖器是a1,a2,a3,a4,a5;a4是大于等于x的，那么前面的a3是小于x的 
@@ -234,23 +240,23 @@ export default defineComponent({
     // 理解这个程序，有可能返回的是大于等于x的，有可能返回的是数组的最后一个 
     // 那么这个写法呢，就会在合法范围内，尽量返回大于等于X的位置，如果不能返回，就返回小于X的位置                         
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 300. 最长递增子序列</a>
-					</h5>
-					<p>
-						思路：。。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='increasing-subsequence'>
+            <a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 300. 最长递增子序列</a>
+          </h5>
+          <p>
+            思路：。。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var lengthOfLIS = function(nums) {
         let head = 1, tail = nums.length 
         if (tail === 0) return 0 
@@ -272,23 +278,23 @@ export default defineComponent({
         return head;
     };                  
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/"
-							target="_blank" rel="noopener noreferrer">leetcode 1011. 在 D 天内送达包裹的能力</a>
-					</h5>
-					<p>
-						思路：....。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='ship-packages'>
+            <a href="https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/"
+              target="_blank" rel="noopener noreferrer">leetcode 1011. 在 D 天内送达包裹的能力</a>
+          </h5>
+          <p>
+            思路：....。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var shipWithinDays = function(weights, days) {
         let l = 0,r = 0, mid; 
         for(const x of weights) r += x,l = Math.max(l,x); 
@@ -307,24 +313,24 @@ export default defineComponent({
         return cnt;
     }        
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 4. 寻找两个正序数组的中位数</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='sorted-arrays'>
+            <a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 4. 寻找两个正序数组的中位数</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findMedianSortedArrays = function(nums1, nums2) {
         // nums1长度比nums2小 
         if (nums1.length > nums2.length) { [nums1, nums2] = [nums2, nums1]; }
@@ -354,24 +360,24 @@ export default defineComponent({
         return (m + n) % 2 == 0 ? (median1 + median2) / 2 : median1;
     };                          
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/search-insert-position/"
-							target="_blank" rel="noopener noreferrer">leetcode 35. 搜索插入位置</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='search-insert'>
+            <a href="https://leetcode-cn.com/problems/search-insert-position/"
+              target="_blank" rel="noopener noreferrer">leetcode 35. 搜索插入位置</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var searchInsert = function(nums, target) {
         let head = 0,tail = nums.length,mid; 
         while(head < tail){ 
@@ -382,24 +388,24 @@ export default defineComponent({
         return head;
     };                          
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/"
-							target="_blank" rel="noopener noreferrer">leetcode 81. 搜索旋转排序数组 II</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='rotated-sorted'>
+            <a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/"
+              target="_blank" rel="noopener noreferrer">leetcode 81. 搜索旋转排序数组 II</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var search = function(nums, target) {
         // 首先确定两头的值等不等于target,存在返回true 
         if(nums[0] == target || nums[nums.length - 1] == target) return true; 
@@ -424,30 +430,30 @@ export default defineComponent({
         return false;
     };                            
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode </a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode </a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-            </div>
-        )
-    }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    )
+  }
 })

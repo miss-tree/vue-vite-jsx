@@ -1,17 +1,17 @@
 <template>
   <headerbanner/>
-  <backTop/>
+  <!-- <backTop/> -->
   <router-view />
 </template>
 
 <script>
   import headerbanner from '@/views/common/header.jsx'
-  import backTop from '@/components/BackTop.vue'
+  // import backTop from '@/components/BackTop.vue'
   import { getCurrentInstance,onMounted } from "vue"
   export default{
     components:{
       headerbanner,
-      backTop
+      // backTop
     },
     setup(){
       onMounted(()=>{
