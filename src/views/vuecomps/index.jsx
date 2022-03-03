@@ -15,19 +15,27 @@ export default defineComponent({
         <div onclick={getRouter}><h3>vuePlugin</h3></div>
         <div>
           <p>
-            学习vue3 首先得去<a href="https://v3.cn.vuejs.org/"
+            学习vue3之前肯定是会了vue2的相应知识，这样会更快的上手。不会也不打紧，可以直接学习 vue3，但是首先得去<a href="https://v3.cn.vuejs.org/"
               target="_blank" rel="noopener noreferrer">官网</a>学习他的api，下面介绍常用的api
           </p>
         </div>
         <div>
           <ul>
-            <li>响应数据--ref/reactive/</li>
+            <li>
+              <router-link to="/Watch">
+                响应数据--ref/reactive/
+              </router-link>
+            </li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
+            <li>
+              <router-link to="/Watch">
+                监听响应数据--watch/computed
+              </router-link>
+            </li>
             <li></li>
             <li></li>
             <li></li>
