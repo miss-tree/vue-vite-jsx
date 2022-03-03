@@ -6,6 +6,7 @@ import path from 'path'
 import { resolve }  from 'path'
 import copy from 'rollup-plugin-copy' //引入插件
 
+// console.log("vite.config",process.env);
 // https://vitejs.dev/config/
 export default defineConfig({
     // assetsDir: 'static',
@@ -18,6 +19,9 @@ export default defineConfig({
 			"comps":path.resolve(__dirname,"src/components")
 		}
 	},
+  define:{
+    WEBIP: JSON.stringify('http://47.113.195.11/')
+  },
 	plugins: [
 		vue(),
 		vueJsx(),

@@ -15,10 +15,10 @@
   }
   // import header from '@/views/vite/index.jsx'
   
-  // fetch('/api/get').then(res=>res.json())
-  // .then(data=>{
-  //   console.log('data:',data);
-  // })
+  fetch('/api/get').then(res=>res.json())
+  .then(data=>{
+    console.log('App Mock =>data:',data);
+  })
 
   // This starter template is using Vue 3 experimental <script setup> SFCs
   // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
