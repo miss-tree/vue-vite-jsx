@@ -43,6 +43,11 @@ export default defineComponent({
               target="_blank" rel="noopener noreferrer">webpack-react-ts项目配置</a>
           </div>
           <div>
+            <router-link to="/ErrorPage">
+              vite开发常见错误
+            </router-link>
+          </div>
+          <div>
             <h4>添加sass</h4>
             <p>
               因为 Vite 同时提供了对 .scss, .sass, .less, .styl 和 .stylus 文件的内置支持。
