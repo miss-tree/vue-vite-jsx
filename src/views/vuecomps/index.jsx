@@ -37,13 +37,6 @@ export default defineComponent({
               </router-link>
             </li>
             <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
           </ul>
         </div>
 
@@ -56,6 +49,9 @@ export default defineComponent({
           <pre>
             <code>
               {`
+    <template>
+      <div id="app"></div>
+    </template>          
     
     <script setup>
     import {defineComponent,defineAsyncComponent,reactive,toRefs} from 'vue'
@@ -76,7 +72,7 @@ export default defineComponent({
           name:"miss-tree"
         })
 
-        return {
+        return {  // 暴露到template中
           ...toRefs(state)
         }
       }
