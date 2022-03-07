@@ -29,6 +29,9 @@ export default defineComponent({
                                 <router-link to="/Algorithm">算法</router-link>
                             </div>
                         </div>
+                        <p>
+                          项目基于vite开发，使用vue3，使用编译方式为jsx和vue文件混合开发
+                        </p>
                     </div>    
                     <div>
                         <img src= {state.ww} alt="" />
