@@ -1,59 +1,64 @@
-import {defineComponent} from 'vue'
-import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif' 
+import { defineComponent, reactive } from 'vue'
+import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif'
+import location from "comps/location/index.vue";
 
 export default defineComponent({
-    name:'Heap',
-    setup(){
+  name: 'Heap',
+  components: { location },
+  setup () {
+    const state = reactive({
+      list: [
+        { name: 'leetcode 207. 课程表', id: 'path-sum' },
+        { name: 'leetcode #210. 课程表 II', id: 'course-schedule' },
+        { name: 'leetcode #1122. 数组的相对排序', id: 'relative-sort' },
+        { name: 'leetcode #164. 最大间距', id: 'maximum-gap' },
+        { name: 'leetcode #274. H 指数', id: 'h-index' },
+        { name: 'leetcode #56. 合并区间', id: 'merge-intervals' },
+        { name: 'leetcode 1288. 删除被覆盖区间', id: 'covered-intervals' },
+        { name: 'leetcode 491. 递增子序列', id: 'increasing-subsequences' },
+        { name: 'leetcode 面试题 04.12. 求和路径', id: 'sum-lcci' },
+        { name: 'leetcode 239. 滑动窗口最大值', id: 'window-maximum' },
+      ]
+    })
 
-        return ()=>(
-            <div class='contentCenter'>
-                <div>
-                    <h3>基数排序</h3>
-                    <p>
-                        归并排序是排序的一个新的方法，相对快速排序是一个稳定的排序
-                        在时间空间复杂度上是O(n)。排序方法是将一个有序或无序数组拆分成两个数组，
-                        然后递归拆分，就像一个完美二叉树一样。将最深度的节点的左右两个节点数据进行比较，
-                        借助于第三个存储空间排序，把两个节点排序返回上个节点D，这时候D就是一个有序的数组，
-                        与他相邻的兄弟节点也是一个有序数组F，再按照之前第三片存储空间G排序，对D和F第一个数据比较，
-                        小的从数组里删除放到G里面，这样又返回一个有序数组。 最后将从最深度的节点进行合并排序
-                    </p>
-                    <img src={CardinalitySort} alt="归并排序"/>
-                </div>
-                <div>
-                    <h5>归并排序应用场景</h5>
-                    <ul>
-                        <li>
-                            内存2G 对40G文件进行排序
-                        </li>
-                    </ul>
-                </div>
-                <div>
-					<h5>LeetCode题</h5>
-					<ul>
-						<li>leetcode #207. 课程表</li>
-						<li>LeetCode #210. 课程表 II</li>
-						<li>leetcode #1122. 数组的相对排序</li>
-						<li>LeetCode #164. 最大间距</li>
-						<li>LeetCode #274. H 指数</li>
-						<li>LeetCode #56. 合并区间</li>
-						<li>LeetCode #1288. 删除被覆盖区间</li>
-						<li>LeetCode #491. 递增子序列</li>
-						<li>LeetCode 面试题 04.12. 求和路径</li>
-						<li>LeetCode #239. 滑动窗口最大值</li>
-					</ul>
-				</div>
-				<div>
-					<h5 id="path-sum">
-						<a href="https://leetcode-cn.com/problems/course-schedule/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 207. 课程表</a>
-					</h5>
-					<p>
-						思路：...
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+    return () => (
+      <div class='contentCenter'>
+        <div>
+          <h3>归并排序</h3>
+          <p>
+            归并排序是排序的一个新的方法，相对快速排序是一个稳定的排序
+            在时间空间复杂度上是O(n)。排序方法是将一个有序或无序数组拆分成两个数组，
+            然后递归拆分，就像一个完美二叉树一样。将最深度的节点的左右两个节点数据进行比较，
+            借助于第三个存储空间排序，把两个节点排序返回上个节点D，这时候D就是一个有序的数组，
+            与他相邻的兄弟节点也是一个有序数组F，再按照之前第三片存储空间G排序，对D和F第一个数据比较，
+            小的从数组里删除放到G里面，这样又返回一个有序数组。 最后将从最深度的节点进行合并排序
+          </p>
+          <img src={CardinalitySort} alt="归并排序" />
+        </div>
+        <div>
+          <h5>归并排序应用场景</h5>
+          <ul>
+            <li>
+              内存2G 对40G文件进行排序
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5>LeetCode题</h5>
+          <location list={state.list}></location>
+        </div>
+        <div>
+          <h5 id="path-sum">
+            <a href="https://leetcode-cn.com/problems/course-schedule/"
+              target="_blank" rel="noopener noreferrer">leetcode 207. 课程表</a>
+          </h5>
+          <p>
+            思路：...
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var canFinish = function(numCourses, prerequisites) {
         const inDegree = new Array(numCourses).fill(0);//入度数组 
         const map = {};//邻接表 
@@ -85,24 +90,24 @@ export default defineComponent({
         }
         return cnt == numCourses;//选修了所有的课程
     };                    
-                                `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/course-schedule-ii/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode #210. 课程表 II</a>
-					</h5>
-					<p>
-						思路：。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+                `}
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='course-schedule'>
+            <a href="https://leetcode-cn.com/problems/course-schedule-ii/"
+              target="_blank" rel="noopener noreferrer">leetcode #210. 课程表 II</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findOrder = function(numCourses, prerequisites) {
         const inDegree = new Array(numCourses).fill(0);//入度数组 
         const map = {};//邻接表 
@@ -135,25 +140,25 @@ export default defineComponent({
         if(ans.length == numCourses) return ans; 
         return [];
     };
-                                `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/relative-sort-array/"
-							target="_blank" rel="noopener noreferrer">leetcode #1122. 数组的相对排序</a>
-					</h5>
-					<p>
-						思路：...。
-						<br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              `}
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='relative-sort'>
+            <a href="https://leetcode-cn.com/problems/relative-sort-array/"
+              target="_blank" rel="noopener noreferrer">leetcode #1122. 数组的相对排序</a>
+          </h5>
+          <p>
+            思路：...。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var relativeSortArray = function(arr1, arr2) {
             // 取值范围是【0-1000】，开个大数据，取一个数1005 
             let arr = new Array(1005).fill(0); 
@@ -169,23 +174,23 @@ export default defineComponent({
             return res;
         };                      
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/maximum-gap/"
-							target="_blank" rel="noopener noreferrer">leetcode #164. 最大间距</a>
-					</h5>
-					<p>
-						思路：....
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='maximum-gap'>
+            <a href="https://leetcode-cn.com/problems/maximum-gap/"
+              target="_blank" rel="noopener noreferrer">leetcode #164. 最大间距</a>
+          </h5>
+          <p>
+            思路：....
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var maximumGap = function(nums) {
             let cnt = new Array(65536).fill(0);//记录下标和 
             let temp = new Array(nums.length);//临时数组 
@@ -202,23 +207,23 @@ export default defineComponent({
             return ans;
         };                        
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/h-index/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode #274. H 指数</a>
-					</h5>
-					<p>
-						思路：。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='h-index'>
+            <a href="https://leetcode-cn.com/problems/h-index/"
+              target="_blank" rel="noopener noreferrer">leetcode #274. H 指数</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var hIndex = function(citations) {
         // 给的指数数组，按着从小到大进行排序 
         citations = citations.sort((a, b) => a - b); // 定义H指数是合法的1， 
@@ -229,23 +234,23 @@ export default defineComponent({
         return h;
     };                         
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/merge-intervals/"
-							target="_blank" rel="noopener noreferrer">leetcode #56. 合并区间</a>
-					</h5>
-					<p>
-						思路：。。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='merge-intervals'>
+            <a href="https://leetcode-cn.com/problems/merge-intervals/"
+              target="_blank" rel="noopener noreferrer">leetcode #56. 合并区间</a>
+          </h5>
+          <p>
+            思路：。。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var merge = function(intervals) {
         // 如果传递进来的数组长度为0 返回一个空数组 
         if (intervals.length === 0) { return [] }// 创建合并数组 
@@ -265,23 +270,23 @@ export default defineComponent({
         return res
     };                    
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/remove-covered-intervals/"
-							target="_blank" rel="noopener noreferrer">leetcode 1288. 删除被覆盖区间</a>
-					</h5>
-					<p>
-						思路：....。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='covered-intervals'>
+            <a href="https://leetcode-cn.com/problems/remove-covered-intervals/"
+              target="_blank" rel="noopener noreferrer">leetcode 1288. 删除被覆盖区间</a>
+          </h5>
+          <p>
+            思路：....。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var removeCoveredIntervals = function(intervals) {
         // 首先制定比较规则，[a, b]按照a升序 b降序排列 
         intervals.sort((a, b) => { 
@@ -297,24 +302,24 @@ export default defineComponent({
         return len - cnt;//整体的区间数量 - 被完全包含的/被删除的区间 = 剩余的区间数量
     };        
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/increasing-subsequences/"
-							target="_blank" rel="noopener noreferrer">leetcode 491. 递增子序列</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='increasing-subsequences'>
+            <a href="https://leetcode-cn.com/problems/increasing-subsequences/"
+              target="_blank" rel="noopener noreferrer">leetcode 491. 递增子序列</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findSubsequences = function(nums) {
         const res = []; const len = nums.length; 
         const set = new Set(); 
@@ -339,24 +344,24 @@ export default defineComponent({
         return res;
     };                           
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/paths-with-sum-lcci/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 面试题 04.12. 求和路径</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='sum-lcci'>
+            <a href="https://leetcode-cn.com/problems/paths-with-sum-lcci/"
+              target="_blank" rel="noopener noreferrer">leetcode 面试题 04.12. 求和路径</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     //用递归，判断当前根节点的值到底是选择还是不选择，如果从当前根节点的值选择的话，
     //就如果不选择就证 明我接下来递归左子树递归右子树找一个和为22 的 
     // 节点;以当前位置作为起点，找多少和值为22的路径数量; 
@@ -371,49 +376,49 @@ export default defineComponent({
         return dfs(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum); 
     };                          
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/sliding-window-maximum/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 239. 滑动窗口最大值</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
-                                `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode </a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='window-maximum'>
+            <a href="https://leetcode-cn.com/problems/sliding-window-maximum/"
+              target="_blank" rel="noopener noreferrer">leetcode 239. 滑动窗口最大值</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-            </div>
-        )
-    }
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode </a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
+                                `}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    )
+  }
 })
