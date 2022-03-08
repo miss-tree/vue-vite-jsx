@@ -1,54 +1,57 @@
-import {defineComponent} from 'vue'
-// import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif' 
+import { defineComponent, reactive } from 'vue'
+import location from "comps/location/index.vue";
 
 export default defineComponent({
-    name:'Dynamic',
-    setup(){
-        return ()=>(
-            <div class='contentCenter'>
-                <div>
-                    <h3>动态规划</h3>
-                    <p>
-                    </p>
-                    {/* <img src={CardinalitySort} alt="归并排序"/> */}
-                </div>
-                <div>
-                    <h5>动态规划应用场景</h5>
-                    <ul>
-                        <li>
-                           。。。
-                        </li>
-                    </ul>
-                </div>
-                <div>
-					<h5>LeetCode题</h5>
-					<ul>
-						<li>leetcode #1143. 最长公共子序列</li>
-						<li>LeetCode #132. 分割回文串 II</li>
-						<li>leetcode #416. 分割等和子集</li>
-						<li>LeetCode #72. 编辑距离</li>
-						<li>LeetCode #714. 买卖股票的最佳时机含手续费</li>
-						<li>LeetCode #213. 打家劫舍 II</li>
-						<li>LeetCode #474. 一和零</li>
-						<li>LeetCode #494. 目标和</li>
-						<li>LeetCode #518. 零钱兑换 II</li>
-						<li>LeetCode #377. 组合总和 Ⅳ</li>
-                        
-						<li>LeetCode # </li>
-					</ul>
-				</div>
-				<div>
-					<h5 id="path-sum">
-						<a href="https://leetcode-cn.com/problems/longest-common-subsequence/"
-							target="_blank" rel="noopener noreferrer">leetcode 1143. 最长公共子序列</a>
-					</h5>
-					<p>
-						思路：... 
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+  name: 'Dynamic',
+  components: { location },
+  setup () {
+    const state = reactive({
+      list: [
+        { name: 'leetcode 1143. 最长公共子序列', id: 'path-sum' },
+        { name: 'leetcode 132. 分割回文串 II', id: 'palindrome-partitioning' },
+        { name: 'leetcode 416. 分割等和子集', id: 'subset-sum' },
+        { name: 'leetcode 72. 编辑距离', id: 'edit-distance' },
+        { name: 'leetcode 714. 买卖股票的最佳时机含手续费', id: 'transaction-fee' },
+        { name: 'leetcode 213. 打家劫舍 II', id: 'house-robber' },
+        { name: 'leetcode 474. 一和零', id: 'and-zeroes' },
+        { name: 'leetcode 494. 目标和', id: 'target-sum' },
+        { name: 'leetcode 518. 零钱兑换 II', id: 'coin-change' },
+        { name: 'leetcode 377. 组合总和 Ⅳ', id: 'combination-sum' },
+      ]
+    })
+
+    return () => (
+      <div class='contentCenter'>
+        <div>
+          <h3>动态规划</h3>
+          <p>
+          </p>
+          {/* <img src={CardinalitySort} alt="归并排序"/> */}
+        </div>
+        <div>
+          <h5>动态规划应用场景</h5>
+          <ul>
+            <li>
+              。。。
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5>LeetCode题</h5>
+          <location list={state.list}></location>
+        </div>
+        <div>
+          <h5 id="path-sum">
+            <a href="https://leetcode-cn.com/problems/longest-common-subsequence/"
+              target="_blank" rel="noopener noreferrer">leetcode 1143. 最长公共子序列</a>
+          </h5>
+          <p>
+            思路：...
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var longestCommonSubsequence = function(text1, text2) {
         const m = text1.length,n = text2.length; 
         const dp = new Array(m + 1).fill(0).map(() => new Array(n + 1).fill(0)); 
@@ -64,23 +67,23 @@ export default defineComponent({
         return dp[m][n];
     };               
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/palindrome-partitioning-ii/"
-							target="_blank" rel="noopener noreferrer">leetcode 132. 分割回文串 II</a>
-					</h5>
-					<p>
-						思路：。。。 
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='palindrome-partitioning'>
+            <a href="https://leetcode-cn.com/problems/palindrome-partitioning-ii/"
+              target="_blank" rel="noopener noreferrer">leetcode 132. 分割回文串 II</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var minCut = function(s) {
         const n = s.length;
         const dp = new Array(n).fill(0).map(() => new Array(n).fill(true)); 
@@ -100,24 +103,24 @@ export default defineComponent({
         }return f[n - 1];
     };
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/"
-							target="_blank" rel="noopener noreferrer">leetcode 416. 分割等和子集</a>
-					</h5>
-					<p>
-						思路：...。
-						<br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='subset-sum'>
+            <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/"
+              target="_blank" rel="noopener noreferrer">leetcode 416. 分割等和子集</a>
+          </h5>
+          <p>
+            思路：...。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var canPartition = function(nums) {
             const n = nums.length; 
             if(n < 2){ return false; }
@@ -144,42 +147,42 @@ export default defineComponent({
             return dp[n - 1][target];
         };             
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/edit-distance/"
-							target="_blank" rel="noopener noreferrer">leetcode 72. 编辑距离</a>
-					</h5>
-					<p>
-						思路：....
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='edit-distance'>
+            <a href="https://leetcode-cn.com/problems/edit-distance/"
+              target="_blank" rel="noopener noreferrer">leetcode 72. 编辑距离</a>
+          </h5>
+          <p>
+            思路：....
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
                           
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/"
-							target="_blank" rel="noopener noreferrer">leetcode 714. 买卖股票的最佳时机含手续费</a>
-					</h5>
-					<p>
-						思路：。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5 id='transaction-fee'>
+            <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/"
+              target="_blank" rel="noopener noreferrer">leetcode 714. 买卖股票的最佳时机含手续费</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var maxProfit = function(prices, fee) {
         const n = prices.length; 
         const dp = new Array(n).fill(0).map(v => new Array(2).fill(0)); 
@@ -196,23 +199,23 @@ export default defineComponent({
         return Math.max(dp[n - 1][0], dp[n - 1][1] );
     };                      
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/house-robber-ii/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 213. 打家劫舍 II</a>
-					</h5>
-					<p>
-						思路：。。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='house-robber'>
+            <a href="https://leetcode-cn.com/problems/house-robber-ii/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 213. 打家劫舍 II</a>
+          </h5>
+          <p>
+            思路：。。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var rob = function(nums) {
         let n = nums.length; 
         if(n == 1) return nums[0];//如果只有一个房子也可以偷 
@@ -238,23 +241,23 @@ export default defineComponent({
         return Math.max(ans1,ans2);
     };                 
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/ones-and-zeroes/"
-							target="_blank" rel="noopener noreferrer">leetcode 474. 一和零</a>
-					</h5>
-					<p>
-						思路：....。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='and-zeroes'>
+            <a href="https://leetcode-cn.com/problems/ones-and-zeroes/"
+              target="_blank" rel="noopener noreferrer">leetcode 474. 一和零</a>
+          </h5>
+          <p>
+            思路：....。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findMaxForm = function(strs, m, n) {
         const dp = new Array(m+1).fill(0).map(v => new Array(n+1).fill(0)); 
         // 去扫描每一个字符串 
@@ -274,24 +277,24 @@ export default defineComponent({
         return dp[m][n];
     };     
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/target-sum/"
-							target="_blank" rel="noopener noreferrer">leetcode 494. 目标和</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='target-sum'>
+            <a href="https://leetcode-cn.com/problems/target-sum/"
+              target="_blank" rel="noopener noreferrer">leetcode 494. 目标和</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findTargetSumWays = function(nums, target) {
         let sum = nums.reduce((t,v) => t + v);
         if((sum - target) % 2 !== 0 || sum - target < 0) return 0;
@@ -307,24 +310,24 @@ export default defineComponent({
         return dp[result];
     };                       
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/coin-change-2/"
-							target="_blank" rel="noopener noreferrer">leetcode 518. 零钱兑换 II</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5 id='coin-change'>
+            <a href="https://leetcode-cn.com/problems/coin-change-2/"
+              target="_blank" rel="noopener noreferrer">leetcode 518. 零钱兑换 II</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var change = function(amount, coins) {
         const dp = new Array(amount + 1).fill(0);
         dp[0] = 1;
@@ -337,25 +340,25 @@ export default defineComponent({
         return dp[amount];
     };                         
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/combination-sum-iv/"
-							target="_blank" rel="noopener noreferrer">leetcode 377. 组合总和 Ⅳ </a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+
+        <div>
+          <h5 id='combination-sum'>
+            <a href="https://leetcode-cn.com/problems/combination-sum-iv/"
+              target="_blank" rel="noopener noreferrer">leetcode 377. 组合总和 Ⅳ </a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var combinationSum4 = function(nums, target) {
         const dp = new Array(target + 1).fill(0);
         dp[0] = 1;
@@ -369,30 +372,30 @@ export default defineComponent({
         return dp[target];
     };                            
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/maximum-subarray-min-product/"
-							target="_blank" rel="noopener noreferrer">leetcode </a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/maximum-subarray-min-product/"
+              target="_blank" rel="noopener noreferrer">leetcode </a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-            </div>
-        )
-    }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    )
+  }
 })

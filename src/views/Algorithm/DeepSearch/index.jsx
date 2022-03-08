@@ -1,68 +1,58 @@
-import {defineComponent} from 'vue'
-// import CardinalitySort from '@/views/Algorithm/img/CardinalitySort.gif' 
+import { defineComponent, reactive } from 'vue'
+import location from "comps/location/index.vue";
 
 export default defineComponent({
-    name:'Heap',
-    setup(){
+  name: 'Heap',
+  components: { location },
+  setup () {
+    const state = reactive({
+      list: [
+        { name: 'leetcode 705. 设计哈希集合', id: 'path-sum' },
+        // { name: 'leetcode #210. 课程表 II', id: 'course-schedule' },
+        // { name: 'leetcode #1122. 数组的相对排序', id: 'relative-sort' },
+        // { name: 'leetcode #164. 最大间距', id: 'maximum-gap' },
+        // { name: 'leetcode #274. H 指数', id: 'h-index' },
+        // { name: 'leetcode #56. 合并区间', id: 'merge-intervals' },
+        // { name: 'leetcode 1288. 删除被覆盖区间', id: 'covered-intervals' },
+        // { name: 'leetcode 491. 递增子序列', id: 'increasing-subsequences' },
+        // { name: 'leetcode 面试题 04.12. 求和路径', id: 'sum-lcci' },
+        // { name: 'leetcode 239. 滑动窗口最大值', id: 'window-maximum' },
+      ]
+    })
 
-        return ()=>(
-            <div class='contentCenter'>
-                <div>
-                    <h3>哈希表布隆过滤器</h3>
-                    <p>
-                        哈希表是一种设计感极强的数据结构。是根据 键 （Key）而直接访问在记忆体储存位置的 数据结构 。
-                        也就是说，它通过计算一个关于键值的函数，将所需查询的数据 映射 到表中一个位置来访问记录，
-                        这加快了查找速度。. 这个映射函数称做 散列函数 ，存放记录的数组称做 散列表 。
-                        (存储空间与数量有关。)
-                        但是在插入表格的时候会有冲突，下面的常用的解决冲突的方法：
-                    </p>
-                    <ul>
-                        <li>开放地址法：用当前冲突的下标每次冲突 +1 ，或者每次下次冲突 n平方n， 计算方式比较灵活。 </li>
-                        <li>再哈希法：(字面意思)</li>
-                        <li>建立公共溢出区：将冲突的变量放到一个公共区域里</li>
-                        <li>链式地址法(拉链法--推荐)：就是在当前存储区域下建立一条链表结构</li>
-                    </ul>
-                    <p>
-                        布隆过滤器是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。
-                        它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。
-                        (存储空间与数量无关。)
-                    </p>
-                    {/* <img src={CardinalitySort} alt="归并排序"/> */}
-                </div>
-                <div>
-                    <h5>二分查找应用场景</h5>
-                    <ul>
-                        <li>
-                            内存2G 对40G文件进行排序
-                        </li>
-                    </ul>
-                </div>
-                <div>
-					<h5>LeetCode题</h5>
-					<ul>
-						<li>leetcode #705. 设计哈希集合</li>
-						<li>LeetCode #706. 设计哈希映射</li>
-						<li>leetcode #面试题 16.25. LRU 缓存</li>
-						<li>LeetCode #187. 重复的DNA序列</li>
-						<li>LeetCode #318. 最大单词长度乘积</li>
-						<li>LeetCode #240. 搜索二维矩阵 II</li>
-						<li>LeetCode #979. 在二叉树中分配硬币</li>
-						<li>LeetCode #430. 扁平化多级双向链表</li>
-						<li>LeetCode #863. 二叉树中所有距离为 K 的结点</li>
-					</ul>
-				</div>
-				<div>
-					<h5 id="path-sum">
-						<a href="https://leetcode-cn.com/problems/design-hashset/"
-							target="_blank" rel="noopener noreferrer">leetcode 705. 设计哈希集合</a>
-					</h5>
-					<p>
-						思路：... 
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+    return () => (
+      <div class='contentCenter'>
+        <div>
+          <h3>深搜（DFS）与广搜（BFS）</h3>
+          <p>
+            深搜（DFS）与广搜（BFS）
+          </p>
+          {/* <img src={CardinalitySort} alt="归并排序"/> */}
+        </div>
+        <div>
+          <h5>二分查找应用场景</h5>
+          <ul>
+            <li>
+              内存2G 对40G文件进行排序
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5>LeetCode题</h5>
+          <location list={state.list}></location>
+        </div>
+        <div>
+          <h5 id="path-sum">
+            <a href="https://leetcode-cn.com/problems/design-hashset/"
+              target="_blank" rel="noopener noreferrer">leetcode 705. 设计哈希集合</a>
+          </h5>
+          <p>
+            思路：...
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var MyHashSet = function() {
         this.BASE = 100; 
         this.data = new Array(this.BASE).fill(0).map(() => new Array());
@@ -96,23 +86,23 @@ export default defineComponent({
     }; 
     MyHashSet.prototype.hash = function(key) { return key % this.BASE; }                  
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/design-hashmap/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 706. 设计哈希映射</a>
-					</h5>
-					<p>
-						思路：。。。 
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/design-hashmap/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 706. 设计哈希映射</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var MyHashMap = function() {
         this.BASE = 100; 
         this.data = new Array(this.BASE).fill(0).map(() => new Array());
@@ -149,24 +139,24 @@ export default defineComponent({
         return key % this.BASE; 
     }
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-				
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/lru-cache-lcci/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 面试题 16.25. LRU 缓存</a>
-					</h5>
-					<p>
-						思路：...。
-						<br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/lru-cache-lcci/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 面试题 16.25. LRU 缓存</a>
+          </h5>
+          <p>
+            思路：...。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
         var LRUCache = function(capacity) {
             // 最大缓存容量 
             this.capacity = parseInt(capacity, 10); 
@@ -197,23 +187,23 @@ export default defineComponent({
             this.cache[key] = value;
         };                
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/repeated-dna-sequences/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 187. 重复的DNA序列</a>
-					</h5>
-					<p>
-						思路：....
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/repeated-dna-sequences/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 187. 重复的DNA序列</a>
+          </h5>
+          <p>
+            思路：....
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var findRepeatedDnaSequences = function(s) {
         if (s.length < 11) return []; 
         let n = s.length, map = new Map(), left = 0, right = 10, res= []; 
@@ -227,23 +217,23 @@ export default defineComponent({
         return res;
     };                       
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/maximum-product-of-word-lengths/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 318. 最大单词长度乘积</a>
-					</h5>
-					<p>
-						思路：。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/maximum-product-of-word-lengths/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 318. 最大单词长度乘积</a>
+          </h5>
+          <p>
+            思路：。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var maxProduct = function(words) {
         var getCharCodeDiff = function(char) { 
             return char.charCodeAt(0) - 'a'.charCodeAt(0); 
@@ -264,23 +254,23 @@ export default defineComponent({
         return max;
     };                       
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 240. 搜索二维矩阵 II</a>
-					</h5>
-					<p>
-						思路：。。。。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 240. 搜索二维矩阵 II</a>
+          </h5>
+          <p>
+            思路：。。。。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var searchMatrix = function(matrix, target) {
         let i = 0, j = matrix[0].length -1; 
         while(i < matrix.length && j >= 0){ // i, j 等于待查找值 
@@ -291,23 +281,23 @@ export default defineComponent({
          return false; 
      };                 
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/distribute-coins-in-binary-tree/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 979. 在二叉树中分配硬币</a>
-					</h5>
-					<p>
-						思路：....。
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/distribute-coins-in-binary-tree/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 979. 在二叉树中分配硬币</a>
+          </h5>
+          <p>
+            思路：....。
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var distributeCoins = function(root) {
         function dfs(root){ 
             if(root == null) return [0,0];//移动的步数，一个是需要的金币的数量 
@@ -317,24 +307,24 @@ export default defineComponent({
         return dfs(root)[0];
     };      
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 430. 扁平化多级双向链表</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 430. 扁平化多级双向链表</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var flatten = function(head) {
         if(head == null) return null; // 指针p 
         let p = head,q,k; // 当p不指向空地时候，每次都指向当前地这个节点 
@@ -357,24 +347,24 @@ export default defineComponent({
          return head; 
      };                       
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode 863. 二叉树中所有距离为 K 的结点</a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode 863. 二叉树中所有距离为 K 的结点</a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     var distanceK = function(root, target, k) {
         if(!root) return []; 
         let targetNode = null; 
@@ -404,31 +394,31 @@ export default defineComponent({
         return res;
     };                         
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-                
+              </code>
+            </pre>
+          </div>
+        </div>
 
-                <div>
-					<h5>
-						<a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/submissions/"
-							target="_blank" rel="noopener noreferrer">leetcode </a>
-					</h5>
-					<p>
-						思路：。。。。。。
-                        <br/>
-					</p>
-                    <div className="code">
-                        <pre>
-                            <code>
-                                {`
+
+        <div>
+          <h5>
+            <a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/submissions/"
+              target="_blank" rel="noopener noreferrer">leetcode </a>
+          </h5>
+          <p>
+            思路：。。。。。。
+            <br />
+          </p>
+          <div className="code">
+            <pre>
+              <code>
+                {`
                                 `}
-                            </code>
-                        </pre>
-                    </div>
-				</div>
-            </div>
-        )
-    }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    )
+  }
 })
