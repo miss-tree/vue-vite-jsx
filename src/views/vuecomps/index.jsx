@@ -22,8 +22,8 @@ export default defineComponent({
         <div>
           <ul>
             <li>
-              <router-link to="/Watch">
-                响应数据--ref/reactive/
+              <router-link to="/Reactive">
+                响应式API
               </router-link>
             </li>
             <li></li>

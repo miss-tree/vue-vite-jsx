@@ -1,10 +1,10 @@
-import { defineComponent, reactive  } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import location from "comps/location/index.vue";
 
 export default defineComponent({
   name: 'ErrorPage',
   components: { location },
-  setup(){
+  setup () {
     const state = reactive({
       list: [
         { name: 'Invalid vnode type when creating vnode undefined.', id: 'Invalid-type' },
@@ -19,30 +19,30 @@ export default defineComponent({
         // { name: 'LeetCode #81. 搜索旋转排序数组 II', id: 'rotated-sorted' },
       ]
     })
-    
-    return ()=>(
-      <div class='contentCenter'>
-          <div>
-              <h3>vite常见错误情况</h3>
-              <p>
-                  下面讲下常见的开发过程错误情况，避免你踩坑：
-              </p>
 
-              <location list={state.list}></location>
-          </div>
-          <div id='Invalid-type'>
-            <h4 class="errorMsg">Invalid vnode type when creating vnode undefined</h4>
-            <div className="code">
-              <pre>
-                <code>
-                  {`
+    return () => (
+      <div class='contentCenter'>
+        <div>
+          <h3>vite常见错误情况</h3>
+          <p>
+            下面讲下常见的开发过程错误情况，避免你踩坑：
+          </p>
+
+          <location list={state.list}></location>
+        </div>
+        <div id='Invalid-type'>
+          <h4 class="errorMsg">Invalid vnode type when creating vnode undefined</h4>
+          <div className="code">
+            <pre>
+              <code>
+                {`
     是vue3.2之前版本问题，原因是组件前缀没有大写
     import backTop from "@/components/BackTop.vue"  ==>错误写法
     import BackTop from "@/components/BackTop.vue"  ==>正确写法         
                   `}
-                </code>
-              </pre>
-            </div>
+              </code>
+            </pre>
+          </div>
         </div>
         <div id='dynamically'>
           <h4 class="errorMsg">TypeError: Failed to fetch dynamically imported module:</h4>
