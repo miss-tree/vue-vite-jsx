@@ -22,24 +22,24 @@ export default defineComponent({
         <div>
           <ul>
             <li>
+              <router-link to="/CreateApp">
+                全局API
+              </router-link>
+            </li>
+            <li>
               <router-link to="/Reactive">
                 响应式API
               </router-link>
             </li>
             <li>
-              <router-link to="/CreateApp">
-                全局API
-              </router-link>
-            </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li>
               <router-link to="/Watch">
                 监听响应数据--watch/computed
               </router-link>
             </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
             <li></li>
           </ul>
         </div>

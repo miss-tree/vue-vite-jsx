@@ -9,7 +9,7 @@ export default defineComponent({
     const state = reactive({
       list: [
         { name: 'reactive', id: 'reactive' },
-        // { name: 'leetcode 132. 分割回文串 II', id: 'palindrome-partitioning' },
+        { name: 'readonly', id: 'readonly' },
         // { name: 'leetcode 416. 分割等和子集', id: 'subset-sum' },
         // { name: 'leetcode 72. 编辑距离', id: 'edit-distance' },
         // { name: 'leetcode 714. 买卖股票的最佳时机含手续费', id: 'transaction-fee' },
@@ -45,15 +45,49 @@ export default defineComponent({
               <code>
                 {`
   const word = ref("miss-tree")
+  let count = ref(0)
   const obj = reactive({
     a:"hello",
     ob:{
       msg:word
-    }
+    },
+    num:count
   })
 
   console.log(obj.ob.msg) // "miss-tree"
-  console.log(obj.ob.msg === word.value) // true              
+  console.log(obj.ob.msg === word.value) // true   
+  
+  count.value++
+  console.log(obj.ob.num === count.value) // true  
+
+                `}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div>
+          <h4 id='readonly'>readonly</h4>
+          <p>
+            接受一个对象 (响应式或纯对象) 或 ref 并返回原始对象的只读代理。只读代理是深层的：任何被访问的嵌套 property 也是只读的
+          </p>
+          <div>
+            <pre>
+              <code>
+                {`
+  const original = reactive({ count: 0 })
+
+  const copy = readonly(original)
+
+  watchEffect(() => {
+    // 用于响应性追踪
+    console.log(copy.count)
+  })
+
+  // 变更 original 会触发依赖于副本的侦听器
+  original.count++
+
+  // 变更副本将失败并导致警告
+  copy.count++ // 警告!
                 `}
               </code>
             </pre>
