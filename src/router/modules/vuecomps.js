@@ -18,7 +18,7 @@ const vuecomps =[
     name: "Reactive",
     meta: { title: "Reactive", icon: 'vue' },
     component: () => import('@/views/vuecomps/Reactive/Reactive')
-  },
+  }, 
   {
     path: '/CreateApp',
     name: "CreateApp",
@@ -30,6 +30,12 @@ const vuecomps =[
     name: "Instructions",
     meta: { title: "Instructions", icon: 'vue' },
     component: () => import('@/views/vuecomps/Instructions/Instructions')
+  },
+  {
+    path: '/Refs',
+    name: "Refs",
+    meta: { title: "Refs", icon: 'vue' },
+    component: () => import('@/views/vuecomps/Refs/Refs')
   },
 ]
 export default vuecomps;

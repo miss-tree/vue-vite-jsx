@@ -41,7 +41,11 @@ export default defineComponent({
                 指令
               </router-link>
             </li>
-            <li></li>
+            <li>
+              <router-link to="/Refs">
+                Refs
+              </router-link>
+            </li>
             <li></li>
             <li></li>
             <li></li>
