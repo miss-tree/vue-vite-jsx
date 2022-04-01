@@ -12,7 +12,7 @@ const vuecomps =[
     name: "Watch",
     meta: { title: "Watch", icon: 'vue' },
     component: () => import('@/views/vuecomps/Watch/index')
-  },
+  }, 
   {
     path: '/Reactive',
     name: "Reactive",
@@ -24,6 +24,12 @@ const vuecomps =[
     name: "CreateApp",
     meta: { title: "CreateApp", icon: 'vue' },
     component: () => import('@/views/vuecomps/CreateApp/CreateApp')
+  },
+  {
+    path: '/Instructions',
+    name: "Instructions",
+    meta: { title: "Instructions", icon: 'vue' },
+    component: () => import('@/views/vuecomps/Instructions/Instructions')
   },
 ]
 export default vuecomps;

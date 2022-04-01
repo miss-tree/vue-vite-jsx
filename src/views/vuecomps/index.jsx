@@ -36,7 +36,11 @@ export default defineComponent({
                 监听响应数据--watch/computed
               </router-link>
             </li>
-            <li></li>
+            <li>
+              <router-link to="/Instructions">
+                指令
+              </router-link>
+            </li>
             <li></li>
             <li></li>
             <li></li>
