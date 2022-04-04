@@ -11,6 +11,7 @@ export default defineComponent({
 				<router-link to='/vite'>VITE</router-link>
 				<router-link to='/vueModules'>VUE3</router-link>
 				<router-link to='/Algorithm'>算法</router-link>
+				<router-link to='/Mobile'>移动端</router-link>
 			</div>
 		)
 	},
