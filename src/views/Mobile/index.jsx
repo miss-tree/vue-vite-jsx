@@ -1,6 +1,5 @@
 import { defineComponent } from 'vue'
 import { useRoute } from "vue-router";
-// import "./assets/css/index.scss"
 
 
 export default defineComponent({
@@ -12,7 +11,7 @@ export default defineComponent({
     }
     return () => (
       <div class="contentCenter">
-        <div onclick={getRouter}><h3>vuePlugin</h3></div>
+        <div onclick={getRouter}><h3>移动端</h3></div>
         <div>
           <p>
             之前在第一家公司有用到过H5嵌入微信，后面就基本没碰移动端了，在最近渔珠智谷这家公司接触就比较多。
@@ -25,12 +24,12 @@ export default defineComponent({
           <ul>
             <li>
               <router-link to="/CreateApp">
-                全局API
+                taro
               </router-link>
             </li>
             <li>
               <router-link to="/Reactive">
-                响应式API
+                css
               </router-link>
             </li>
             {/* <li>
@@ -52,22 +51,6 @@ export default defineComponent({
             <li></li>
             <li></li>
           </ul>
-        </div>
-
-        <div class="linkVue">
-          <a href="https://gitee.com/miss-tree/vue-vite-jsx/blob/main/src/views/vuecomps/index.jsx"
-            target="_blank" rel="noopener noreferrer">本项目文件配置</a>
-        </div>
-        <div class="">vue 文件配置展示</div>              
-        <div className="code">
-          <pre>
-            <code>
-              {`
-    
-                               
-              `}
-            </code>
-          </pre>
         </div>
       </div>
     )
